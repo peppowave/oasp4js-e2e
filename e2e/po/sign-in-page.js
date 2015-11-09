@@ -1,19 +1,27 @@
-function SignInPage (){}
-
-SignInPage.prototype.open = function(url){
-    browser.get(url);
+var config = {
+    appUrl: 'http://localhost:9000/#/main/sign-in',
+    userNameModel: 'SIC.credentials.username',
+    passwordModel: 'SIC.credentials.password',
+    signInButtonText: 'Sign In'
 };
 
-SignInPage.prototype.enterUserName = function(text){
-    element(by.model('SIC.credentials.username')).sendKeys(text);
+function SignInPage() {
+}
+
+SignInPage.prototype.open = function () {
+    browser.get(config.appUrl);
 };
 
-SignInPage.prototype.enterPassword = function(pass){
-    element(by.model('SIC.credentials.password')).sendKeys(pass);
+SignInPage.prototype.enterUserName = function (text) {
+    element(by.model(config.userNameModel)).sendKeys(text);
 };
 
-SignInPage.prototype.signIn = function(){
-    element(by.buttonText('Sign In')).click();
+SignInPage.prototype.enterPassword = function (pass) {
+    element(by.model(config.passwordModel)).sendKeys(pass);
+};
+
+SignInPage.prototype.signIn = function () {
+    element(by.buttonText(config.signInButtonText)).click();
 };
 
 module.exports = SignInPage;

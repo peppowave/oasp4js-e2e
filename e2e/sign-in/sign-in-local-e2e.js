@@ -10,7 +10,7 @@ describe('sign in page', function () {
 
     it('should open sign in page, enter credentials and sign in', function() {
 
-        signInPage.open('http://localhost:9000/#/main/sign-in');
+        signInPage.open();
         signInPage.enterUserName('waiter');
         signInPage.enterPassword('waiter');
         signInPage.signIn();
