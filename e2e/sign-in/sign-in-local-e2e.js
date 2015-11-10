@@ -8,12 +8,16 @@ describe('sign in page', function () {
         signInPage = new SignInPage();
     });
 
+    afterEach(function(){
+       signInPage.signOut();
+    });
+
     it('should open sign in page, enter credentials and sign in', function() {
 
         signInPage.open();
         signInPage.enterUserName('waiter');
         signInPage.enterPassword('waiter');
-        signInPage.signIn();
+        signInPage.clickSignInButton();
 
         browser.wait(function() {
             return browser.getCurrentUrl().then(function(url) {
