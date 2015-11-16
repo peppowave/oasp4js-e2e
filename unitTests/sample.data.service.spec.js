@@ -1,9 +1,20 @@
 describe('sampleData service tests', function () {
     'use strict';
 
-    var sampleData;
+    var sampleData, sampleHttpMock = {
+        readData: function(){
+            return ['abc'];
+        }
+    };
 
-    beforeEach(module('sampleModule'));
+    beforeEach(function(){
+        module('sampleModule');
+
+        module(function($provide){
+            $provide.value('sampleHttp', sampleHttpMock);
+        });
+    });
+
     beforeEach(inject(function (_sampleData_) {
         sampleData = _sampleData_;
     }));

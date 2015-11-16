@@ -1,9 +1,9 @@
-angular.module('sampleModule').factory('sampleData', function () {
+angular.module('sampleModule').factory('sampleData', function (sampleHttp) {
     'use strict';
 
     return {
         getData: function(){
-            return ['abc'];
+            return sampleHttp.readData();
         }
     };
 });
