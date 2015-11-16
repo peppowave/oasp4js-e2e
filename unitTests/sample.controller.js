@@ -1,4 +1,4 @@
-angular.module('sampleModule').controller('SampleController', function ($scope) {
+angular.module('sampleModule').controller('SampleController', function ($scope,$location) {
     'use strict';
 
     $scope.factorial = function (n) {
@@ -11,6 +11,10 @@ angular.module('sampleModule').controller('SampleController', function ($scope) 
         else {
             return n * $scope.factorial(n - 1);
         }
+    };
+
+    $scope.goToDialog = function(){
+        $location.path('/dialog-a');
     };
 
 });
