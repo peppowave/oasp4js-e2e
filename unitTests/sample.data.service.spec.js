@@ -8,21 +8,11 @@ describe('sampleData service tests', function () {
         sampleData = _sampleData_;
     }));
 
-    it('should return the current data', function () {
+    it('should return data', function () {
         // given
         var data = [];
         // when
-        angular.copy(sampleData.getCurrent(), data);
-        // then
-        expect(data.length).toBe(0);
-    });
-
-    it('should query data', function () {
-        // given
-        var data = [];
-        // when
-        sampleData.fetchData();
-        angular.copy(sampleData.getCurrent(), data);
+        angular.copy(sampleData.getData(), data);
         // then
         expect(data.length).toBe(1);
         expect(data[0]).toBe('abc');
