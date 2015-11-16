@@ -17,6 +17,7 @@ module.exports = function (config) {
         files: [
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
+            'unitTests/factorial.js',
             'unitTests/*.module.js',
             'unitTests/*.controller.js',
             'unitTests/*.service.js',
@@ -55,11 +56,12 @@ module.exports = function (config) {
 
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
+        autoWatch: false,
 
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+//        browsers: ['PhantomJS'],
         browsers: ['PhantomJS'],
 
 
